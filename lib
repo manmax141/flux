@@ -196,7 +196,7 @@ function Flux:Window(text, bottom,mainclr)
 					until MainFrame.Size.Y.Offset <= 1
 					FluxLib.Enabled = false
 				else
-					MainFrame:TweenSize(UDim2.new(0, 706, 0, 484), Enum.EasingDirection.Out, Enum.EasingStyle.Quart, .6, true)
+					MainFrame:TweenSize(UDim2.new(0, 406, 0, 384), Enum.EasingDirection.Out, Enum.EasingStyle.Quart, .6, true)
 					repeat wait() 
 					until MainFrame.Size.Y.Offset > 1
 					FluxLib.Enabled = true
