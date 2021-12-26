@@ -185,7 +185,7 @@ function Flux:Window(text, bottom,mainclr)
 	
 	MakeDraggable(Drag,MainFrame)
 	MakeDraggable(LeftFrame,MainFrame)
-	MainFrame:TweenSize(UDim2.new(0, 706, 0, 484), Enum.EasingDirection.Out, Enum.EasingStyle.Quart, .6, true)
+	MainFrame:TweenSize(UDim2.new(0, 406, 0, 384), Enum.EasingDirection.Out, Enum.EasingStyle.Quart, .6, true)
 	
 	local uitoggled = false
 		_G.toggleUiHere = function()
