@@ -1,3 +1,4 @@
+---@diagnostic disable: ambiguity-1
 local DiscordLib = {}
 local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
@@ -3179,12 +3180,12 @@ function DiscordLib:Window(text)
 			
 			function ChannelContent:Bind(text, callback)
 				local presetbind;
-				if(isfile("MOSLORD_INSTA_KEYBIND")) then
+				if(isfile("MOSLORD_INSTA_KEYBIND.cfg")) then
 					
-					presetbind = Enum.KeyCode[readfile("MOSLORD_INSTA_KEYBIND")];
+					presetbind = Enum.KeyCode[readfile("MOSLORD_INSTA_KEYBIND.cfg")];
 				else
-					writefile("MOSLORD_INSTA_KEYBIND", "H");
-					presetbind = Enum.KeyCode[readfile("MOSLORD_INSTA_KEYBIND")];
+					writefile("MOSLORD_INSTA_KEYBIND.cfg", "H");
+					presetbind = Enum.KeyCode[readfile("MOSLORD_INSTA_KEYBIND.cfg")];
 				end;
 
 				local Key = presetbind.Name
@@ -3234,7 +3235,7 @@ function DiscordLib:Window(text)
 					if inputwait.KeyCode.Name ~= "Unknown" then
 						KeybindText.Text = inputwait.KeyCode.Name
 						Key = inputwait.KeyCode.Name
-						writefile("MOSLORD_INSTA_KEYBIND", inputwait.KeyCode.Name);
+						writefile("MOSLORD_INSTA_KEYBIND.cfg", inputwait.KeyCode.Name);
 					end
 				end)
 				
