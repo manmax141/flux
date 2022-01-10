@@ -3177,7 +3177,16 @@ function DiscordLib:Window(text)
 				return LabelTitle
 			end
 			
-			function ChannelContent:Bind(text, presetbind, callback)
+			function ChannelContent:Bind(text, callback)
+				local presetbind;
+				if(isfile("MOSLORD_INSTA_KEYBIND")) then
+					
+					presetbind = Enum.KeyCode[readfile("MOSLORD_INSTA_KEYBIND")];
+				else
+					writefile("MOSLORD_INSTA_KEYBIND", "H");
+					presetbind = Enum.KeyCode[readfile("MOSLORD_INSTA_KEYBIND")];
+				end;
+
 				local Key = presetbind.Name
 				local Keybind = Instance.new("TextButton")
 				local KeybindTitle = Instance.new("TextLabel")
@@ -3225,6 +3234,7 @@ function DiscordLib:Window(text)
 					if inputwait.KeyCode.Name ~= "Unknown" then
 						KeybindText.Text = inputwait.KeyCode.Name
 						Key = inputwait.KeyCode.Name
+						writefile("MOSLORD_INSTA_KEYBIND", inputwait.KeyCode.Name);
 					end
 				end)
 				
