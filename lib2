@@ -2820,7 +2820,7 @@ function DiscordLib:Window(text)
 					DropdownFrameMain.Size = UDim2.new(0, 392, 0, framesize + 6)
 					DropdownFrameMainOutline.Size = UDim2.new(0, 396, 0, framesize + 10)
 				end
-				return DropFunc
+				return DropFunc, DropdownTitle;
 			end
 			function ChannelContent:Colorpicker(text, preset, callback)
 				local OldToggleColor = Color3.fromRGB(0, 0, 0)
