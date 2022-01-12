@@ -3251,7 +3251,7 @@ function DiscordLib:Window(text)
 				ChannelHolder.CanvasSize = UDim2.new(0,0,0,ChannelHolderLayout.AbsoluteContentSize.Y)
 			end
 			
-			return ChannelContent
+			return ChannelContent, ChannelBtnTitle;
 		end
 		
 		return ChannelHold
